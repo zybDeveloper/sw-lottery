@@ -1,6 +1,6 @@
 
 /*创建lottery数据库*/
-CREATE DATABASE IF NOT EXISTS dbname DEFAULT CHARSET 'utf8';
+CREATE DATABASE IF NOT EXISTS lottery DEFAULT CHARSET 'utf8';
 
 /*使用数据库lottery*/
 use lottery;
