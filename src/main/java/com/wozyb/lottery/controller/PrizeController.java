@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 /*
 * 奖项设置
 * */
-
 @RestController
 @RequestMapping
 public class PrizeController {

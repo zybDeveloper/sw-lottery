@@ -1,29 +1,20 @@
 package com.wozyb.lottery;
 
-import com.wozyb.lottery.entity.User;
-import com.wozyb.lottery.util.MyRowMapper;
-import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class LotteryApplicationTests {
-	@Autowired
+	/*@Autowired
 	JdbcTemplate jdbcTemplate;
 
 	@Test
 	public void contextLoads() {
 	}
 
-	/*测试添加用户方法速度*/
+	*//*测试添加用户方法速度*//*
 	@Test
 	public void addUserTest(){
 		User user=new User();
@@ -35,7 +26,7 @@ public class LotteryApplicationTests {
 		addUser(user);
 	}
 
-	/*测试查询算法速度*/
+	*//*测试查询算法速度*//*
 	@Test
 	public void queryUserLuck(){
 		queryLuck(50);
@@ -83,7 +74,7 @@ public class LotteryApplicationTests {
 		int result=jdbcTemplate.update(sql,o);
 		long endTime=System.currentTimeMillis();
 		System.out.println("标识方法执行时间:"+(endTime-startTime));
-	}
+	}*/
 
 }
 

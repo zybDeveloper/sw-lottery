@@ -17,5 +17,16 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
+DROP TABLE IF EXISTS `prize`;
+CREATE TABLE `prize` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `prizeName` VARCHAR(50) DEFAULT NULL,
+  `prizeNumber` VARCHAR(30) DEFAULT NULL,
+  `tag` varchar(150) DEFAULT NULL,
+  `isValid` enum('0','1') DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
 -- query luck user--
 -- select count(*) from user where isvalid='yes';

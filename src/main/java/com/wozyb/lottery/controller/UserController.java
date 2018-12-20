@@ -86,7 +86,7 @@ public class UserController {
         Random random=new Random();
         String sql="update user set isValid=? where id = ?";
         //参数集
-        Object o[]={"yes",userId};
+        Object o[]={"1",userId};
         int result=jdbcTemplate.update(sql,o);
     }
 
