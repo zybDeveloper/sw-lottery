@@ -6,6 +6,7 @@ import com.wozyb.lottery.util.MyRowMapper;
 import org.hibernate.validator.internal.util.logging.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,7 +27,6 @@ public class UserController {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-
     /*用户登录授权*/
     @RequestMapping("userLoginWeixin")
     public void userLoginWeixin(){
@@ -44,6 +44,7 @@ public class UserController {
     public void importUserData(){
 
     }
+
 
     /*增加用户*/
     @RequestMapping(value="adduser",method=RequestMethod.POST)

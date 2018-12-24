@@ -1,15 +1,51 @@
 package com.wozyb.lottery;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
+import java.util.Map;
 
 
 @SpringBootTest
 public class LotteryApplicationTests {
-	/*@Autowired
-	JdbcTemplate jdbcTemplate;
 
+
+
+
+	@Autowired
+    JdbcTemplate jdbcTemplate;
+
+	@Test
+    public void checkLogin(){
+        //jdbcTemplate.queryForList("select id,username,password from admin where username='?' and password='?'",obj);
+        //List<Map<String,Object>> listmap=jdbcTemplate.queryForList("select id,username,password from admin where username='?' and password='?'",obj);
+        List<Map<String,Object>> rows=jdbcTemplate.queryForList("select * from admin");
+        for(int i =0;i<rows.size();i++){
+            Map adminMap=rows.get(i);
+            System.out.println(adminMap.get("id"));
+            System.out.println(adminMap.get("username"));
+            System.out.println(adminMap.get("password"));
+        }
+
+        /*if(listmap.size()>0){
+            Map<String,Object> mo=listmap.get(0);
+            for(Map.Entry<String,Object> m:mo.entrySet()){
+                System.out.println("key="+m.getKey()+",value"+m.getValue());
+            }
+            System.out.println("true");
+        }else{
+            System.out.println("false");
+        }*/
+    }
+
+
+
+/*
 	@Test
 	public void contextLoads() {
 	}

@@ -28,5 +28,18 @@ CREATE TABLE `prize` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(50) DEFAULT NULL,
+  `password` VARCHAR(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+
+INSERT into admin(username,password) VALUES("admin","admin");
+select * from admin where username="admin" and password="admin";
+
 -- query luck user--
 -- select count(*) from user where isvalid='yes';
