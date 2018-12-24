@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script src="../static/js/jquery-3.2.1.js"></script>
+    <style type="text/css">
+        body{
+            background-color:#ff0000;
+        }
+        #persons{
+            font-size:100px;
+        }
+    </style>
+</head>
+<body>
+     <div class="container">
+         <h1 class="text-center">山东书壳儿网络科技有限公司欢迎你</h1>
+         <span class="text-center">已到人数</span>
+         <span  th:text="${username}"></span>
+         <span id="persons" class="text-center"></span>
+     </div>
+
+    <script type="text/javascript">
+
+        var ref=setInterval(function () {
+            $.ajax({
+                type: "get",
+                url: "/queryPersons",
+                success: function (data) {
+                    console.log("success!"+data.result);
+                    console.log("success!"+data);
+                    $("#persons").html(data);
+                },error:function () {
+                    console.log("error");
+                }
+            });
+        },1000);
+    </script>
+</body>
+</html>
