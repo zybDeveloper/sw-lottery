@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class ManagerController {
 
     /*后台管理用户登录*/
     @RequestMapping(value = "backLogin",method = RequestMethod.POST)
-    public @ResponseBody JSONObject backLogin(HttpServletRequest request){
+    public @ResponseBody JSONObject backLogin(HttpServletRequest request, HttpSession session){
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         HashMap<String,String> resp=new HashMap<>();
@@ -34,6 +35,7 @@ public class ManagerController {
             resp.put("status","success");
             resp.put("msg","msg");
             resp.put("user","user success");
+            session.setAttribute("login","yes");
         }else{
             resp.put("code","1");
             resp.put("status","fail");
@@ -45,7 +47,7 @@ public class ManagerController {
     }
 
 
-    /*后台管理用户登录*/
+    /*查询返回用户列表*/
     @RequestMapping(value = "queryUserList",method = RequestMethod.POST)
     public @ResponseBody JSONObject queryUserList(HttpServletRequest request){
         String username=request.getParameter("username");

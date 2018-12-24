@@ -36,10 +36,4 @@ CREATE TABLE `admin` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-
-
 INSERT into admin(username,password) VALUES("admin","admin");
-select * from admin where username="admin" and password="admin";
-
--- query luck user--
--- select count(*) from user where isvalid='yes';
